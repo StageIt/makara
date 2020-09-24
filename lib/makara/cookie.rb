@@ -45,6 +45,7 @@ module Makara
       end
       cookie[:expires] = now + cookie[:max_age]
       cookie[:value] = context_data.collect { |proxy_id, ttl| "#{proxy_id}:#{ttl}" }.join('|')
+      cookie[:max_age] = cookie[:max_age].to_s
 
       cookie
     end
